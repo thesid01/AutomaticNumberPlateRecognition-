@@ -9,3 +9,8 @@ virtualenv -p 'C:\Users\thesid01\AppData\Local\Pro01\AppData\Local\Programs\Pyth
 ````
 pip3 install -r .\requirements.txt
 ````
+* Start virtualEnvironment
+````
+.\venv\Scripts\activate
+````
+Run ````python main.py```` to detect number plates
