@@ -73,7 +73,7 @@ if __name__ == "__main__":
             
             #uncomment below line to view each image
             
-            # plt.show()
+            plt.show()
             print("PLATE IS     :::: " + text)
             print()
         except:
