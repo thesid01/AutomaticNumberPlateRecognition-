@@ -18,5 +18,9 @@ pip3 install -r .\requirements.txt
 Run ````python main.py```` to detect number plates
 
 Uncomment line number 76 in main.py to view images and bounding box.
+
 Number Plate detected text will be printed in console.
+
 Detected plate data will be saved in CSV file.
+
+Delete any output file before running.

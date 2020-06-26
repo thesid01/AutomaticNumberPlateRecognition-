@@ -11,7 +11,9 @@ from imutils import contours
 pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
 from helpers import NumberPlates
 import warnings
+import time
 
+plate_list = [["Actual Number", "Detected Number"]]
 warnings.filterwarnings("ignore")
 
 if __name__ == "__main__":
@@ -76,5 +78,14 @@ if __name__ == "__main__":
             # plt.show()
             print("PLATE IS     :::: " + text)
             print()
+            plate = plate.split(".")[0]
+            plate = ''.join(e for e in plate if e.isalnum())
+            text = ''.join(e for e in text if e.isalnum())
+            plate_list.append([plate,text])
         except:
+            plate = plate.split(".")[0]
+            plate = ''.join(e for e in plate if e.isalnum())
             print("Plate not found")
+            plate_list.append([plate,""])
+    plate_list = np.array(plate_list)
+    np.savetxt("output{}.csv".format(int(round(time.time() * 1000))),plate_list, fmt="%s", delimiter=",")
