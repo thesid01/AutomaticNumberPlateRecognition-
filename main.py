@@ -62,6 +62,7 @@ if __name__ == "__main__":
 
             text = pytesseract.image_to_string(crop, config='--psm 11')
             text = re.sub(r"[\n\t\s]*", "", text)
+            text = ''.join(e for e in text if e.isalnum() or e == "-")
 
             title = ["Original", "Plate", text]
             result_plt = [original_images, crop, crop_res]
